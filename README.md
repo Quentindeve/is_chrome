@@ -27,3 +27,7 @@ This one is pretty blattant: Try Ctrl+Shift+I on the app. If it opens you Chrome
 ## Does it have any Chrome-related files ?
 
 If the app's root contains files listed in ``blacklist.txt``, it is for sure a Chrome-based app. Note that this blacklist is non-exhaustive.
+
+# License
+
+Dude just do whatever you want with this, I've done it within 15mn.
