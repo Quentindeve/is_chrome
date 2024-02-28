@@ -1,4 +1,4 @@
-chrome*
+chrome
 LICENCE.electron.txt
 LICENSES.chromium.txt
 snapshot_blob.bin
