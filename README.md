@@ -1,5 +1,7 @@
 # Is this app Chrome ?
 
+*Note: this project is a pile of shit, and I don't care because it's still better than 99% of web-apps.*
+
 These days, developers experience has been prioritized over user experience. Despite both not being incompatible, too lazy companies are using big frameworks like CEF, Electron, NW or Node. All these frameworks have a common point: they use either [Chromium](https://www.chromium.org/chromium-projects/) or [Node](https://nodejs.org/en) to function.
 
 # Why is it so bad ?
