@@ -1,0 +1,47 @@
+#!/bin/env python3
+
+# An awful script made by a guy that is bored to deal with fucking Chromium apps
+# I hate Python
+
+from tkinter import *
+from tkinter import filedialog, messagebox
+import os
+
+W_WIDTH = 500
+W_HEIGHT = 200
+
+BLACKLIST = list()
+with open("blacklist.txt", "r") as f:
+    BLACKLIST = f.read().splitlines()
+
+def on_button_click():
+    filepath = filedialog.askopenfilename()
+
+    if filepath:
+        if os.path.islink(filepath):
+            filepath = os.readlink(filepath)
+
+        filepath = os.path.dirname(filepath)
+        files_list = os.listdir(filepath)
+        
+        for filename in files_list:
+            for blacklisted in BLACKLIST:
+                if blacklisted in filename:
+                    messagebox.showerror("This app is Chrome", f"This app is Chrome because it contains {filename} in its root. Sorry.")
+                    return
+                
+        messagebox.showinfo("This app doesn't seem to be Chrome", f"This app does not seem to be Chrome. If you are sure the opposite, open a PR at https://github.com/Quentindeve/is_chrome with the concerned filename/app name.")
+
+
+root = Tk()
+root.title("Is Chrome ?")
+root.geometry(f'{W_WIDTH}x{W_HEIGHT}')
+
+mainframe = Frame(root, padx=5, pady=5, borderwidth=2)
+mainframe.grid(column=1, row=1, sticky=(N, W, E, S))
+
+root.columnconfigure(1, weight=1)
+root.rowconfigure(1, weight=1)
+
+label = Button(mainframe, text="Choose the App (Shortcuts work too)", command=on_button_click).grid(column=1, row=1)
+root.mainloop()

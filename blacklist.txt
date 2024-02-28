@@ -1,0 +1,6 @@
+chrome*
+LICENCE.electron.txt
+LICENSES.chromium.txt
+snapshot_blob.bin
+v8
+cef
